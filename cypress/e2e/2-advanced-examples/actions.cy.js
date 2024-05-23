@@ -2,7 +2,7 @@
 
 context('Actions', () => {
   beforeEach(() => {
-    cy.visit('https://example.cypress.io/commands/actions')
+    //cy.visit('https://example.cypress.io/commands/actions')
   })
 
   // https://on.cypress.io/interacting-with-elements
@@ -318,4 +318,11 @@ context('Actions', () => {
     // control the duration of the scroll (in ms)
     cy.get('#scrollable-both').scrollTo('center', { duration: 2000 })
   })
+
+  it.only('use iFrame command to handle it', () => {
+    cy.visit('https://demo.automationtesting.in/Static.html');
+    cy.getiFrame('[name="globalSqa"]').find('[class="info_overlay_padding"]', { timeout: 10000 }).eq(0).click({ force: true });
+    cy.wait(5000)
+    cy.getiFrame('[name="globalSqa"]').contains('Selenium 3.0 Training').should('be.visible')
+})
 })
