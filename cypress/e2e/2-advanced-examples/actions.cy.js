@@ -5,8 +5,6 @@ context('Actions', () => {
     cy.visit('https://example.cypress.io/commands/actions')
   })
 
-  // https://on.cypress.io/interacting-with-elements
-
   it('.type() - type into a DOM element', () => {
     // https://on.cypress.io/type
     cy.get('.action-email').type('fake@email.com')
@@ -318,4 +316,5 @@ context('Actions', () => {
     // control the duration of the scroll (in ms)
     cy.get('#scrollable-both').scrollTo('center', { duration: 2000 })
   })
+
 })

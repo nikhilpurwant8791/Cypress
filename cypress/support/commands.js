@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getiFrame', (selector) => {
+    return cy.get(selector)
+        .its('0.contentDocument.body')
+        .should('not.be.undefined')
+        .then(cy.wrap);
+})
