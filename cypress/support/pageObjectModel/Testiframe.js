@@ -16,7 +16,7 @@ export default class Testiframe {
 
     getTraningName(){
         cy.wait(5000)
-       return cy.getiFrame('[name="globalSqa"]');
+       return cy.getiFrame(this.element.iFrame);
     }
 }
 export const iframe =new Testiframe(); 
