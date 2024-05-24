@@ -4,11 +4,14 @@
   "description": "\"# Cypress\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "headed": "npx cypress run --headed",
+    "practice": "npx cypress run --spec \"cypress/e2e/3-cypress-practice/*\" "
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.10.0"
+    "cypress": "^13.10.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
