@@ -4,9 +4,11 @@
   "description": "\"# Cypress\"",
   "main": "index.js",
   "scripts": {
+    "opencypress": "npx cypress open",
     "test": "npx cypress run",
     "headed": "npx cypress run --headed",
-    "practice": "npx cypress run --spec \"cypress/e2e/3-cypress-practice/*\" "
+    "project": "npx cypress run --spec \"cypress/e2e/3-cypress-practice/*\" ",
+    "openproject": "npx cypress run --headed --spec \"cypress/e2e/3-cypress-practice/*\" "
   },
   "author": "",
   "license": "ISC",
