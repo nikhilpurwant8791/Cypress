@@ -2,6 +2,7 @@
 export default class Testiframe {
     constructor() {
         this.element = {
+            url: 'https://www.globalsqa.com/demo-site/frames-and-windows/#iFrame',
             iFrame: '[name="globalSqa"]',
             infoPadding: '[class="info_overlay_padding"]'
         }
