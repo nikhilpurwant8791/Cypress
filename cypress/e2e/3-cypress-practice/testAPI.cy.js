@@ -58,7 +58,7 @@ describe('API Testing', () => {
         })
     })
 
-    it.only('Verify DELETE request', () => {
+    it('Verify DELETE request', () => {
         cy.request({
             method: 'DELETE',
             url: 'https://reqres.in/api/users/2',
