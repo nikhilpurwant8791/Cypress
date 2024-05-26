@@ -13,4 +13,4 @@
 `npm run test`
 
 ##### # To run all projects in Headed mode with default browser
-`npm run headednpm run opencypress`
+`npm run headed`
