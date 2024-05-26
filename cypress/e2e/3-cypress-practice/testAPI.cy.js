@@ -3,7 +3,7 @@ describe('API Testing', () => {
     let storeData;
     beforeEach(() => {
         cy.viewport(1440, 1168);
-        cy.fixture('apiTesting.json').then((data) => {
+        cy.fixture('apiTesting').then((data) => {
             storeData = data;
         })
     })
@@ -52,22 +52,26 @@ describe('API Testing', () => {
             expect(response.body).to.have.property('name', 'Max');
         })
         // Verify newly created object
-        cy.fixture('creatUser.json').then((data) => {
+        cy.fixture('creatUser').then((data) => {
             expect(data).to.have.property('name', 'Max');
             expect(data).to.have.property('job', 'tester');
         })
     })
 
-    it('Verify DELETE request', ()=>{
+    it.only('Verify DELETE request', () => {
         cy.request({
             method: 'DELETE',
             url: 'https://reqres.in/api/users/2',
-        }).then((response)=>{
-            expect(response.status).to.equal(204);
-        })
+        }).as('deleteRequest');
+        
+        //Another approach - Used Alias to execute the call
+        cy.get('@deleteRequest')
+            .then((response) => {
+                expect(response.status).to.equal(204);
+            })
     })
 
-    it('Verify the Intercept method', ()=>{
+    it('Verify the Intercept method', () => {
         cy.intercept('https://api.demoblaze.com/entries').as('interceptWait');
         cy.visit('https://www.demoblaze.com/');
         cy.wait('@interceptWait');
