@@ -2,7 +2,7 @@ import {iframe} from '../../support/pageObjectModel/Testiframe.js';
 
 describe('IFrame Handling', () => {
     before(() => {
-        cy.visit('https://www.globalsqa.com/demo-site/frames-and-windows/#iFrame');
+        cy.visitURL(iframe.element.url);
     })
 
     it('use iFrame command to handle it', () => {

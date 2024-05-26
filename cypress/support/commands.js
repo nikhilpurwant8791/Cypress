@@ -24,9 +24,23 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+Cypress.Commands.add('visitURL', (url)=>{
+        cy.visit(url);
+        return cy.viewport(1440, 1168);
+})
+
 Cypress.Commands.add('getiFrame', (selector) => {
     return cy.get(selector)
         .its('0.contentDocument.body')
         .should('not.be.undefined')
         .then(cy.wrap);
 })
+
+Cypress.Commands.add('newWindowHandling', (url)=>{
+   return cy.window().then((win) => {
+        return cy.stub(win, 'open').callsFake(()=> {
+            win.location.href = url;
+        });
+    });
+})
+

@@ -2,7 +2,7 @@ import { dpd } from "../../support/pageObjectModel/dropDown";
 
 describe('Test Dummy Website', () => {
     before(() => {
-        cy.visit('https://webdriveruniversity.com/index.html');
+        cy.visitURL(dpd.ele.url);
     })
 
 
