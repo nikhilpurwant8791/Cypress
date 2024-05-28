@@ -1,0 +1,16 @@
+{
+    "tooltip": [
+        {
+            "name": "Left"
+        },
+        {
+            "name": "Right"
+        },
+        {
+            "name": "Top"
+        },
+        {
+            "name": "Bottom"
+        }
+    ]
+}
