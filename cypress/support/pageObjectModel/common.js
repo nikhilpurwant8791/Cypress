@@ -4,6 +4,11 @@ export default class Common {
     constructor() {
         this.ele = {
             tooltipWebelement: ".fs-tooltip .fs-tooltip-content",
+        }
+        this.radio ={
+            url : "https://artoftesting.com/samplesiteforselenium",
+            male : '#male',
+            commoneleforRadioBtn: '[action="#"] [type="radio"]',
 
         }
     }
@@ -12,6 +17,10 @@ export default class Common {
     }
     returnTestDataforTooltip() {
         return tooltip['tooltip'];
+    }
+
+    getmultiplRadioBtnElement(){
+        return cy.get(common.radio.commoneleforRadioBtn);
     }
 }
 export const common = new Common();
